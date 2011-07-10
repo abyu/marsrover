@@ -1,1 +1,8 @@
 Mars rover project
+
+lib contains junit as well for cucumber tests to run from the command line
+
+Running Cucumber Tests in command line:
+Install Jruby and gem install cuke4duke
+Then to run the tests, run the following command in the bash prompt
+cuke4duke --jars <lib> --require <your steps class files> --require <your dependency classes> <path to the features>
