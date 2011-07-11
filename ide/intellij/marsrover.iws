@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8a3093e-c26b-496a-b47b-4d5c09a0734a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../data/input1.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../data/output1.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../src/main/marsrover/app/Marsrover.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marsrover.iws" afterPath="$PROJECT_DIR$/marsrover.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/test/cucumber/features/get_rover_postion.feature" afterPath="$PROJECT_DIR$/../../src/test/cucumber/features/get_rover_postion.feature" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java" afterPath="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java" />
     </list>
     <ignored path="marsrover.iws" />
@@ -99,13 +101,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicSteps.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BasicSteps.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="5" selection-start="831" selection-end="831" vertical-scroll-proportion="0.5596708">
+            <state line="25" column="5" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="output1.txt" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../data/output1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="input1.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../../data/input1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.11659808">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Marsrover.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/Marsrover.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="18" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,7 +161,11 @@
         <option value="$PROJECT_DIR$/../../.gitignore" />
         <option value="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/ConsoleAppSteps.java" />
         <option value="$PROJECT_DIR$/../../src/test/cucumber/features/get_rover_postion.feature" />
+        <option value="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/Marsrover.java" />
+        <option value="$PROJECT_DIR$/../../src/main/marsrover/app/Marsrover.java" />
         <option value="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java" />
+        <option value="$PROJECT_DIR$/../../data/output1.txt" />
+        <option value="$PROJECT_DIR$/../../data/input1.txt" />
       </list>
     </option>
   </component>
@@ -246,40 +279,6 @@
               <option name="myItemId" value="cucumber" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="steps" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marsrover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marsrover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cucumber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cucumber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -322,6 +321,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="marsrover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="marsrover" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -372,119 +385,18 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\ThoughtWorks\projects\marsrover\lib" />
     </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="marsrover.app" />
+      <recent name="marsrover" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="marsrover" />
       <recent name="consoleapp" />
       <recent name="test.unit" />
       <recent name="test.unit.consoleapp" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ProcessTalk">
-    <configuration default="false" name="ProcessTalkTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false">
-        <pattern>
-          <option name="PATTERN" value="consoleapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="marsrover" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="consoleapp" />
-      <option name="MAIN_CLASS_NAME" value="consoleapp.ProcessTalkTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ProcessTalkTest.shouldReadFromProcessConsole" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false">
-        <pattern>
-          <option name="PATTERN" value="consoleapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="marsrover" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="consoleapp" />
-      <option name="MAIN_CLASS_NAME" value="consoleapp.ProcessTalkTest" />
-      <option name="METHOD_NAME" value="shouldReadFromProcessConsole" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ProcessTalkTest.shouldProvideInputToProcessConsole" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false">
-        <pattern>
-          <option name="PATTERN" value="consoleapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="marsrover" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="consoleapp" />
-      <option name="MAIN_CLASS_NAME" value="consoleapp.ProcessTalkTest" />
-      <option name="METHOD_NAME" value="shouldProvideInputToProcessConsole" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="ProcessTalk" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false">
-        <pattern>
-          <option name="PATTERN" value="consoleapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="consoleapp.ProcessTalk" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="marsrover" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.">
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -574,12 +486,7 @@
         <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.ProcessTalkTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ProcessTalkTest.shouldReadFromProcessConsole" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ProcessTalkTest.shouldProvideInputToProcessConsole" />
-      <item index="3" class="java.lang.String" itemvalue="Application.ProcessTalk" />
-    </list>
+    <list size="0" />
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -707,12 +614,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/Marsrover.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="18" selection-start="229" selection-end="229" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../marsrover.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="14" selection-start="1131" selection-end="1131" vertical-scroll-proportion="0.5596708">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="5" selection-start="831" selection-end="831" vertical-scroll-proportion="0.5596708">
+        <state line="25" column="5" selection-start="883" selection-end="883" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../data/output1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../data/input1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.11659808">
+          <folding />
         </state>
       </provider>
     </entry>

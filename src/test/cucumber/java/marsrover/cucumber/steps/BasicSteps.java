@@ -1,12 +1,13 @@
 package marsrover.cucumber.steps;
 
 import cuke4duke.annotation.I18n.EN.*;
+import marsrover.app.Marsrover;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import static org.junit.Assert.assertThat;
 import static org.junit.matchers.JUnitMatchers.containsString;
 
 public class BasicSteps {
@@ -19,7 +20,7 @@ public class BasicSteps {
 
     @Then("^I receive the output as in \"([^\"]*)\" file$")
     public void checkOutput(String outputFile) throws IOException {
-        FileReader file = new FileReader(outputFile);
+        FileReader file = new FileReader("data/"+outputFile+".txt");
         BufferedReader readFile = new BufferedReader(file);
         assertThat(marsrover.getOutput(), containsString(readFile.readLine()));
     }
