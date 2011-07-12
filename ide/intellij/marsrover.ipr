@@ -215,6 +215,13 @@
         <root url="jar://$PROJECT_DIR$/../../lib/cuke4duke-0.4.4.jar!/" />
       </SOURCES>
     </library>
+    <library name="mockito">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../lib/mockito-core-1.8.5.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
 </project>
 

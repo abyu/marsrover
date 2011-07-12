@@ -1,5 +1,7 @@
 package test.unit.marsrover.app;
 
+import com.sun.javaws.exceptions.InvalidArgumentException;
+import cuke4duke.annotation.Before;
 import marsrover.app.CoordinatePosition;
 import marsrover.app.Marsrover;
 import marsrover.app.Rover;
@@ -11,23 +13,9 @@ import java.util.ArrayList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.internal.matchers.StringContains.containsString;
-
 public class MarsroverTest {
 
     private String inputFile = System.getProperty("user.dir")+"/../../data/input1.txt";
-    @Test
-    public void readALineFromTheInputFile(){
-        Marsrover marsrover = new Marsrover(inputFile);
-        assertThat(marsrover.readFileLine(), containsString("5 5"));
-    }
-
-    @Test
-    public void readMoreLinesFromTheInputFile(){
-        Marsrover marsrover = new Marsrover(inputFile);
-        assertThat(marsrover.readFileLine(), containsString("5 5"));
-        assertThat(marsrover.readFileLine(), containsString("1 2 N"));
-        assertThat(marsrover.readFileLine(), containsString("LMLMLMLMM"));
-    }
 
     @Test
     public void theUpperCoordinatesFromInputFileIs5And5(){
@@ -65,9 +53,7 @@ public class MarsroverTest {
     }
 
     @Test
-    @Ignore
-    //Still working on to pass
-    public void finalRoverPositionsOfRover1Is1_3_NAndRover2Is5_1_EFromInputFile(){
+    public void finalRoverPositionsOfRover1Is1_3_NAndRover2Is5_1_EFromInputFile() throws InvalidArgumentException {
         Marsrover marsrover = new Marsrover(inputFile);
         ArrayList<Rover> rovers = marsrover.getRovers();
         marsrover.completeNavigation();
@@ -77,6 +63,7 @@ public class MarsroverTest {
         assertThat(rovers.get(1).getCurrentPosition().getX(), is(5));
         assertThat(rovers.get(1).getCurrentPosition().getY(), is(1));
         assertThat(rovers.get(1).getCurrentDirection(), is("E"));
-
     }
+
+
 }

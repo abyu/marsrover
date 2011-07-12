@@ -40,7 +40,8 @@ public class Rover {
     }
 
     public void navigateToFinal() {
-
+        while(executed < commandString.length())
+            step();
     }
 
     public void moveForward() {

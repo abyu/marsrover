@@ -15,11 +15,13 @@ public class BasicSteps {
 
     @Given("^I start my application with \"([^\"]*)\" as my input file$")
     public void startApplication(String inputFile) {
-        marsrover = new Marsrover(inputFile);
+        String file = System.getProperty("user.dir")+"/../../data/"+inputFile+".txt";
+        marsrover = new Marsrover(file);
     }
 
     @Then("^I receive the output as in \"([^\"]*)\" file$")
     public void checkOutput(String outputFile) throws IOException {
+        String filePath = System.getProperty("user.dir")+"/../../data/"+outputFile+".txt";
         FileReader file = new FileReader("data/"+outputFile+".txt");
         BufferedReader readFile = new BufferedReader(file);
         assertThat(marsrover.getOutput(), containsString(readFile.readLine()));

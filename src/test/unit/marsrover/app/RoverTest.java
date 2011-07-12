@@ -159,5 +159,32 @@ public class RoverTest {
         assertThat(rover.getCurrentDirection(), is("E"));
     }
 
+    @Test
+    public void finalPositionOfRoverWith_1_2_NAndCommandStringMRMRMRMIs_1_2_W() throws InvalidArgumentException {
+        Rover rover = new Rover("1 2 N", "MRMRMRM");
+        rover.navigateToFinal();
+        assertThat(rover.getCurrentPosition().getX(), is(1));
+        assertThat(rover.getCurrentPosition().getY(), is(2));
+        assertThat(rover.getCurrentDirection(), is("W"));
+    }
+
+    @Test
+    public void finalPositionOfRoverWith_1_2_NAndCommandStringLMLMLMLMMIs_1_3_N() throws InvalidArgumentException {
+        Rover rover = new Rover("1 2 N", "LMLMLMLMM");
+        rover.navigateToFinal();
+        assertThat(rover.getCurrentPosition().getX(), is(1));
+        assertThat(rover.getCurrentPosition().getY(), is(3));
+        assertThat(rover.getCurrentDirection(), is("N"));
+    }
+
+    @Test
+    public void finalPositionOfRoverWith_3_3_EAndCommandStringMMRMMRMRRMIs_5_1_E() throws InvalidArgumentException {
+        Rover rover = new Rover("3 3 E","MMRMMRMRRM");
+        rover.navigateToFinal();
+        assertThat(rover.getCurrentPosition().getX(), is(5));
+        assertThat(rover.getCurrentPosition().getY(), is(1));
+        assertThat(rover.getCurrentDirection(), is("E"));
+
+    }
 
 }
