@@ -30,4 +30,16 @@ public class CoordinatePosition {
     public int getY() {
         return y;
     }
+
+    public CoordinatePosition goForward() {
+        int tempX = x;
+        int tempY = y + 1;
+        return new CoordinatePosition(tempX,tempY);
+    }
+
+    public CoordinatePosition goBackward() {
+        int tempX = x;
+        int tempY = y - 1;
+        return new CoordinatePosition(tempX,tempY);
+    }
 }

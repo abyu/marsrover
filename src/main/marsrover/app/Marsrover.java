@@ -79,4 +79,10 @@ public class Marsrover {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
     }
+
+    public void completeNavigation() {
+        ArrayList<Rover> rovers = getRovers();
+        for(Rover rover:rovers)
+            rover.navigateToFinal();
+    }
 }

@@ -3,6 +3,7 @@ package test.unit.marsrover.app;
 import marsrover.app.CoordinatePosition;
 import marsrover.app.Marsrover;
 import marsrover.app.Rover;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -61,5 +62,21 @@ public class MarsroverTest {
         Marsrover marsrover = new Marsrover(inputFile);
         ArrayList<Rover> rovers = marsrover.getRovers();
         assertThat(rovers.size(), is(2));
+    }
+
+    @Test
+    @Ignore
+    //Still working on to pass
+    public void finalRoverPositionsOfRover1Is1_3_NAndRover2Is5_1_EFromInputFile(){
+        Marsrover marsrover = new Marsrover(inputFile);
+        ArrayList<Rover> rovers = marsrover.getRovers();
+        marsrover.completeNavigation();
+        assertThat(rovers.get(0).getCurrentPosition().getX(), is(1));
+        assertThat(rovers.get(0).getCurrentPosition().getY(), is(3));
+        assertThat(rovers.get(0).getCurrentDirection(), is("N"));
+        assertThat(rovers.get(1).getCurrentPosition().getX(), is(5));
+        assertThat(rovers.get(1).getCurrentPosition().getY(), is(1));
+        assertThat(rovers.get(1).getCurrentDirection(), is("E"));
+
     }
 }

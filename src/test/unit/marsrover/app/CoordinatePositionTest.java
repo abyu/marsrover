@@ -35,5 +35,31 @@ public class CoordinatePositionTest {
         CoordinatePosition sixTwo = fiveTwo.goRight();
         assertThat(sixTwo.getX(), is(6));
     }
+    
+    @Test
+    public void goForwardOfPositionTwoAndTwoIsTwoAndThree(){
+        CoordinatePosition twoTwo = new CoordinatePosition(2,2);
+        CoordinatePosition twoThree = twoTwo.goForward();
+        assertThat(twoThree.getY(), is(3));
+    }
 
+    @Test
+    public void goForwardOfPositionTwoAndFiveIsTwoAndSix(){
+        CoordinatePosition twoFive = new CoordinatePosition(2,5);
+        CoordinatePosition twoSix  =  twoFive.goForward();
+        assertThat(twoSix.getY(), is(6));
+    }
+
+    @Test
+    public void goBackwardOfPositionTwoAndTwoIsTwoAndOne(){
+        CoordinatePosition twoTwo = new CoordinatePosition(2,2);
+        CoordinatePosition twoOne = twoTwo.goBackward();
+        assertThat(twoOne.getY() , is(1));
+    }
+    @Test
+    public void goBackwardOfPositionTwoAndFiveIsTwoAndFour(){
+        CoordinatePosition twoFive = new CoordinatePosition(2,5);
+        CoordinatePosition twoFour = twoFive.goBackward();
+        assertThat(twoFour.getY() , is(4));
+    }
 }
