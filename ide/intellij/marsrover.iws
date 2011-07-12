@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8a3093e-c26b-496a-b47b-4d5c09a0734a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../lib/mockito-core-1.8.5.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marsrover.ipr" afterPath="$PROJECT_DIR$/marsrover.ipr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../src/main/marsrover/app/InvalidArgumentException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/marsrover.iws" afterPath="$PROJECT_DIR$/marsrover.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../marsrover.iml" afterPath="$PROJECT_DIR$/../../marsrover.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/marsrover/app/CoordinatePosition.java" afterPath="$PROJECT_DIR$/../../src/main/marsrover/app/CoordinatePosition.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/marsrover/app/Marsrover.java" afterPath="$PROJECT_DIR$/../../src/main/marsrover/app/Marsrover.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/main/marsrover/app/Rover.java" afterPath="$PROJECT_DIR$/../../src/main/marsrover/app/Rover.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java" afterPath="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/test/unit/marsrover/app/CoordinatePositionTest.java" afterPath="$PROJECT_DIR$/../../src/test/unit/marsrover/app/CoordinatePositionTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/test/unit/marsrover/app/MarsroverTest.java" afterPath="$PROJECT_DIR$/../../src/test/unit/marsrover/app/MarsroverTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../src/test/unit/marsrover/app/RoverTest.java" afterPath="$PROJECT_DIR$/../../src/test/unit/marsrover/app/RoverTest.java" />
     </list>
@@ -69,33 +69,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BasicSteps.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BasicSteps.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="23" selection-start="864" selection-end="864" vertical-scroll-proportion="0.6666667">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="34" column="5" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Marsrover.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Marsrover.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/Marsrover.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="5" selection-start="2157" selection-end="2157" vertical-scroll-proportion="0.0">
+            <state line="9" column="24" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="input1.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../data/input1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="9" selection-start="26" selection-end="37" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -103,7 +92,7 @@
       <file leaf-file-name="MarsroverTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/test/unit/marsrover/app/MarsroverTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="87" selection-start="502" selection-end="585" vertical-scroll-proportion="0.0">
+            <state line="41" column="69" selection-start="1619" selection-end="1619" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,19 +100,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="output1.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../data/output1.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Rover.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/Rover.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="19" selection-start="1383" selection-end="1383" vertical-scroll-proportion="0.0">
+            <state line="131" column="0" selection-start="3704" selection-end="3704" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -132,10 +112,17 @@
       <file leaf-file-name="RoverTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/test/unit/marsrover/app/RoverTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="175" column="57" selection-start="6816" selection-end="6878" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="154" column="0" selection-start="5795" selection-end="5795" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InvalidArgumentException.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/InvalidArgumentException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="32" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,10 +130,8 @@
       <file leaf-file-name="CoordinatePositionTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/test/unit/marsrover/app/CoordinatePositionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="43" selection-start="2154" selection-end="2154" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="98" column="39" selection-start="3505" selection-end="3505" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,7 +139,7 @@
       <file leaf-file-name="CoordinatePosition.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/CoordinatePosition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="49" selection-start="888" selection-end="888" vertical-scroll-proportion="0.0">
+            <state line="34" column="24" selection-start="804" selection-end="804" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,22 +159,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/../../src/main/consoleapp/ProcessTalk.java" />
         <option value="$PROJECT_DIR$/../../README" />
         <option value="$PROJECT_DIR$/../../.gitignore" />
         <option value="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/ConsoleAppSteps.java" />
         <option value="$PROJECT_DIR$/../../src/test/cucumber/features/get_rover_postion.feature" />
         <option value="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/Marsrover.java" />
-        <option value="$PROJECT_DIR$/../../data/output1.txt" />
         <option value="$PROJECT_DIR$/../../src/test/unit/MarsroverTest.java" />
+        <option value="$PROJECT_DIR$/../../data/input1.txt" />
+        <option value="$PROJECT_DIR$/../../data/output1.txt" />
+        <option value="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java" />
+        <option value="$PROJECT_DIR$/../../src/test/unit/marsrover/app/MarsroverTest.java" />
         <option value="$PROJECT_DIR$/../../src/test/unit/marsrover/app/CoordinatePositionTest.java" />
         <option value="$PROJECT_DIR$/../../src/main/marsrover/app/CoordinatePosition.java" />
+        <option value="$PROJECT_DIR$/../../src/main/marsrover/app/InvalidArgumentException.java" />
         <option value="$PROJECT_DIR$/../../src/main/marsrover/app/Rover.java" />
-        <option value="$PROJECT_DIR$/../../data/input1.txt" />
         <option value="$PROJECT_DIR$/../../src/test/unit/marsrover/app/RoverTest.java" />
-        <option value="$PROJECT_DIR$/../../src/test/unit/marsrover/app/MarsroverTest.java" />
         <option value="$PROJECT_DIR$/../../src/main/marsrover/app/Marsrover.java" />
-        <option value="$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java" />
       </list>
     </option>
   </component>
@@ -226,7 +211,7 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -237,6 +222,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -272,70 +258,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marsrover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marsrover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cucumber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cucumber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marsrover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marsrover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cucumber" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -369,27 +291,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marsrover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="marsrover" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -716,7 +623,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="916" extended-state="0" />
+    <frame x="-8" y="-8" width="1456" height="916" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298153" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -733,7 +640,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294964" sideWeight="0.6701847" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24892086" sideWeight="0.6701847" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24388489" sideWeight="0.6701847" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298153" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -806,9 +713,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../src/test/cucumber/features/get_rover_postion.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="48" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="3" column="48" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../marsrover.iml">
@@ -825,27 +730,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/CoordinatePosition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="49" selection-start="888" selection-end="888" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../data/output1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/Rover.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="19" selection-start="1383" selection-end="1383" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../data/input1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="9" selection-start="26" selection-end="37" vertical-scroll-proportion="0.0">
@@ -853,45 +737,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/test/unit/marsrover/app/RoverTest.java">
+    <entry file="file://$PROJECT_DIR$/../../data/output1.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="57" selection-start="6816" selection-end="6878" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="0.023977432">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/InvalidArgumentException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="32" selection-start="285" selection-end="285" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/CoordinatePosition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="24" selection-start="804" selection-end="804" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../src/test/unit/marsrover/app/CoordinatePositionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="43" selection-start="2154" selection-end="2154" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/Marsrover.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="5" selection-start="2157" selection-end="2157" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="98" column="39" selection-start="3505" selection-end="3505" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../src/test/unit/marsrover/app/MarsroverTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="87" selection-start="502" selection-end="585" vertical-scroll-proportion="0.0">
+        <state line="41" column="69" selection-start="1619" selection-end="1619" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/Rover.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="0" selection-start="3704" selection-end="3704" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/test/unit/marsrover/app/RoverTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="154" column="0" selection-start="5795" selection-end="5795" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../src/test/cucumber/java/marsrover/cucumber/steps/BasicSteps.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="23" selection-start="864" selection-end="864" vertical-scroll-proportion="0.6666667">
+        <state line="34" column="5" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/main/marsrover/app/Marsrover.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="24" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

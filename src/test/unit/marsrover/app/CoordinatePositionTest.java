@@ -62,4 +62,40 @@ public class CoordinatePositionTest {
         CoordinatePosition twoFour = twoFive.goBackward();
         assertThat(twoFour.getY() , is(4));
     }
+
+    @Test
+    public void doesNotCrossTheTopBoundaryWhenMoveForwardFromTheTopMostPoint(){
+        CoordinatePosition fiveFive = new CoordinatePosition(5 ,5);
+        fiveFive.setBounds(0,0,5,5);
+        CoordinatePosition same = fiveFive.goForward();
+        assertThat(same.getX(), is(5));
+        assertThat(same.getY(), is(5));
+    }
+
+    @Test
+    public void doesNotCrossTheBottomBoundaryWhenMoveBackwardFromTheBottomMostPoint(){
+        CoordinatePosition zeroZero = new CoordinatePosition(0 ,0);
+        zeroZero.setBounds(0,0,5,5);
+        CoordinatePosition same = zeroZero.goBackward();
+        assertThat(same.getX(), is(0));
+        assertThat(same.getY(), is(0));
+    }
+
+    @Test
+    public void doesNotCrossTheLeftBoundaryWhenMoveLeftFromTheLeftMostPoint(){
+        CoordinatePosition zeroOne = new CoordinatePosition(0 ,1);
+        zeroOne.setBounds(0,0,5,5);
+        CoordinatePosition same = zeroOne.goLeft();
+        assertThat(same.getX(), is(0));
+        assertThat(same.getY(), is(1));
+    }
+
+    @Test
+    public void doesNotCrossTheRightBoundaryWhenMoveRightFromTheRighttMostPoint(){
+        CoordinatePosition zeroOne = new CoordinatePosition(5 ,1);
+        zeroOne.setBounds(0,0,5,5);
+        CoordinatePosition same = zeroOne.goRight();
+        assertThat(same.getX(), is(5));
+        assertThat(same.getY(), is(1));
+    }
 }

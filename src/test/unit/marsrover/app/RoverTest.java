@@ -1,27 +1,28 @@
 package test.unit.marsrover.app;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
+import marsrover.app.InvalidArgumentException;
 import marsrover.app.Rover;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.matchers.JUnitMatchers.containsString;
 
 public class RoverTest {
     @Test
-    public void roverCreatedWithPosition1And2ReturnsThePositionXAndYAs1And2(){
-        Rover rover = new Rover(1,2);
+    public void roverCreatedWithPosition1And2ReturnsThePositionXAndYAs1And2() {
+        Rover rover = new Rover(1, 2);
         assertThat(rover.getCurrentPosition().getX(), is(1));
         assertThat(rover.getCurrentPosition().getY(), is(2));
     }
 
     @Test
-    public void roverCreatedWithPosition3And4ReturnsThePositionXAndYAs3And4(){
-        Rover rover = new Rover(3,4);
+    public void roverCreatedWithPosition3And4ReturnsThePositionXAndYAs3And4() {
+        Rover rover = new Rover(3, 4);
         assertThat(rover.getCurrentPosition().getX(), is(3));
         assertThat(rover.getCurrentPosition().getY(), is(4));
     }
-    
+
     @Test
     public void positionString1_3_NCreatesRoverWithOneAndThreeAsCurrentPositionAnd_N_AsCurrentDirection() throws InvalidArgumentException {
         Rover rover = new Rover("1 3 N");
@@ -31,16 +32,16 @@ public class RoverTest {
     }
 
     @Test
-    public void throwsAnInvalidArgumentExceptionWhenRoverCreatedWithInvalidPositionString(){
-        try{
+    public void throwsAnInvalidArgumentExceptionWhenRoverCreatedWithInvalidPositionString() {
+        try {
             Rover rover = new Rover("Invalid");
             throw new AssertionError("Expected an InvalidArgumentException but found none");
-        }catch(InvalidArgumentException e){
+        } catch (InvalidArgumentException e) {
             //Its fine
         }
 
     }
-    
+
     @Test
     public void positionStringOf2_3_NAndCommandStringOfMLMLMLMMCreatesRoverWith2And3AsCurrentPositionAnd_N_AsCurrentDirectionWithMLMLMLMMAsCommandString() throws InvalidArgumentException {
         Rover rover = new Rover("2 3 N", "MLMLMLMM");
@@ -86,47 +87,49 @@ public class RoverTest {
     }
 
     @Test
-    public void directionOfRoverFrom_S_WhenTurnLeftIs_E() throws InvalidArgumentException{
+    public void directionOfRoverFrom_S_WhenTurnLeftIs_E() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 S", "L");
         rover.turnLeft();
         assertThat(rover.getCurrentDirection(), is("E"));
     }
 
     @Test
-    public void directionOfRoverFrom_W_WhenTurnLeftIs_S() throws InvalidArgumentException{
+    public void directionOfRoverFrom_W_WhenTurnLeftIs_S() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 W", "L");
         rover.turnLeft();
         assertThat(rover.getCurrentDirection(), is("S"));
     }
 
     @Test
-    public void directionOfRoverFrom_E_WhenTurnLeftIs_N() throws InvalidArgumentException{
+    public void directionOfRoverFrom_E_WhenTurnLeftIs_N() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 E", "L");
         rover.turnLeft();
         assertThat(rover.getCurrentDirection(), is("N"));
     }
+
     @Test
-     public void directionOfRoverFrom_N_WhenTurnRightIs_E() throws InvalidArgumentException {
-           Rover rover = new Rover("1 1 N", "R");
-           rover.turnRight();
-           assertThat(rover.getCurrentDirection(), is("E"));
-       }
+    public void directionOfRoverFrom_N_WhenTurnRightIs_E() throws InvalidArgumentException {
+        Rover rover = new Rover("1 1 N", "R");
+        rover.turnRight();
+        assertThat(rover.getCurrentDirection(), is("E"));
+    }
+
     @Test
-    public void directionOfRoverFrom_S_WhenTurnRightIs_W() throws InvalidArgumentException{
+    public void directionOfRoverFrom_S_WhenTurnRightIs_W() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 S", "R");
         rover.turnRight();
         assertThat(rover.getCurrentDirection(), is("W"));
     }
 
     @Test
-    public void directionOfRoverFrom_W_WhenTurnRightIs_N() throws InvalidArgumentException{
+    public void directionOfRoverFrom_W_WhenTurnRightIs_N() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 W", "R");
         rover.turnRight();
         assertThat(rover.getCurrentDirection(), is("N"));
     }
 
     @Test
-    public void directionOfRoverFrom_E_WhenTurnRightIs_S() throws InvalidArgumentException{
+    public void directionOfRoverFrom_E_WhenTurnRightIs_S() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 E", "R");
         rover.turnRight();
         assertThat(rover.getCurrentDirection(), is("S"));
@@ -179,7 +182,7 @@ public class RoverTest {
 
     @Test
     public void finalPositionOfRoverWith_3_3_EAndCommandStringMMRMMRMRRMIs_5_1_E() throws InvalidArgumentException {
-        Rover rover = new Rover("3 3 E","MMRMMRMRRM");
+        Rover rover = new Rover("3 3 E", "MMRMMRMRRM");
         rover.navigateToFinal();
         assertThat(rover.getCurrentPosition().getX(), is(5));
         assertThat(rover.getCurrentPosition().getY(), is(1));
@@ -187,4 +190,27 @@ public class RoverTest {
 
     }
 
+    @Test
+    public void throwsAnInvalidArgumentExceptionWhenCommandStringIsNotValidAndRoverStops() {
+        Rover rover = new Rover(2, 4);
+        try {
+            rover = new Rover("2 4 E", "ABC");
+            rover.navigateToFinal();
+            throw new AssertionError("Expected an InvalidArgumentException due to invalid commandString");
+        } catch (InvalidArgumentException e) {
+            assertThat(rover.getCurrentPosition().getX(), is(2));
+            assertThat(rover.getCurrentPosition().getY(), is(4));
+            assertThat(rover.getCurrentDirection(), is("E"));
+            assertThat(e.toString(), containsString("Exception Occurred: The Instruction was Invalid"));
+        }
+    }
+
+    @Test
+    public void stopsRoverWhenInstructionMakesTheRoverCrossTheBoundary() throws InvalidArgumentException {
+        Rover rover = new Rover("5 5 N","MM");
+        rover.setBounds(0,0,5,5);
+        assertThat(rover.getCurrentPosition().getX(), is(5));
+        assertThat(rover.getCurrentPosition().getY(), is(5));
+        assertThat(rover.getCurrentDirection(), is("N"));
+    }
 }

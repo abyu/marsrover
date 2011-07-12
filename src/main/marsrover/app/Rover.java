@@ -1,13 +1,15 @@
 package marsrover.app;
 
-
-import com.sun.javaws.exceptions.InvalidArgumentException;
-
 public class Rover {
     private CoordinatePosition currentPosition;
     private String commandString;
     private String currentDirection;
     private int executed;
+    private int minX;
+    private int maxX;
+    private int minY;
+    private int maxY;
+    private boolean boundSet;
     public Rover(int positionX, int positionY) {
         currentPosition = new CoordinatePosition(positionX, positionY);
     }
@@ -23,7 +25,7 @@ public class Rover {
             currentPosition = new CoordinatePosition(Integer.parseInt(separated[0]), Integer.parseInt(separated[1]));
             currentDirection = separated[2];
         } catch (Exception e) {
-            throw new InvalidArgumentException(new String[]{"Invalid Argument for positionString", positionString});
+            throw new InvalidArgumentException("Invalid Argument for positionString");
         }
     }
 
@@ -39,12 +41,14 @@ public class Rover {
         return currentDirection;
     }
 
-    public void navigateToFinal() {
+    public void navigateToFinal() throws InvalidArgumentException {
         while(executed < commandString.length())
             step();
     }
 
     public void moveForward() {
+        if(boundSet)
+            setBoundsForCurrentPosition();
         if(currentDirection.equals("N")){
             currentPosition = currentPosition.goForward();
         }
@@ -57,6 +61,10 @@ public class Rover {
         if(currentDirection.equals("E")){
             currentPosition = currentPosition.goRight();
         }
+    }
+
+    private void setBoundsForCurrentPosition() {
+        currentPosition.setBounds(minX, minY, maxX, maxY );
     }
 
     public void turnLeft() {
@@ -96,13 +104,28 @@ public class Rover {
         }
     }
 
-    public void step() {
+    public void step() throws InvalidArgumentException {
         if(commandString.charAt(executed) == 'M')
             moveForward();
-        if(commandString.charAt(executed) == 'L')
+        else if(commandString.charAt(executed) == 'L')
             turnLeft();
-        if(commandString.charAt(executed) == 'R')
+        else if(commandString.charAt(executed) == 'R')
             turnRight();
+        else{
+            executed = commandString.length();
+            throw new InvalidArgumentException("The Instruction was Invalid");
+        }
         executed++;
     }
+
+    public void setBounds(int minX, int minY, int maxX, int maxY) {
+
+        this.minX = minX;
+        this.minY = minY;
+        this.maxX = maxX;
+        this.maxY = maxY;
+        boundSet = true;
+    }
+
+
 }

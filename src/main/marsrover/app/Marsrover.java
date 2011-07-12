@@ -1,7 +1,5 @@
 package marsrover.app;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -44,13 +42,18 @@ public class Marsrover {
     }
 
     public void completeNavigation() throws InvalidArgumentException {
+
         for (Rover rover : rovers)
             rover.navigateToFinal();
     }
 
-
-    public String getOutput() {
-        return "";
+    public String getOutput() throws InvalidArgumentException {
+        completeNavigation();
+        String output = "";
+        for(Rover rover: rovers){
+            output += rover.getCurrentPosition().getX()+" "+rover.getCurrentPosition().getY()+" "+rover.getCurrentDirection()+"\n";
+        }
+        return output;
     }
 
     private void parseRovers() {
@@ -87,6 +90,20 @@ public class Marsrover {
             bufferedReader.close();
             bufferedReader = new BufferedReader(new FileReader(inputFile));
         } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+    }
+
+    public static void main(String[] arg){
+        if(arg.length < 0){
+            System.out.println("Usage: Marsrover <input file> ");
+            return;
+        }
+
+        try {
+            Marsrover marsrover = new Marsrover(arg[0]);
+            System.out.println(marsrover.getOutput());
+        } catch (InvalidArgumentException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
     }

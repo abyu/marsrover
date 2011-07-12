@@ -1,7 +1,6 @@
 package test.unit.marsrover.app;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
-import cuke4duke.annotation.Before;
+import marsrover.app.InvalidArgumentException;
 import marsrover.app.CoordinatePosition;
 import marsrover.app.Marsrover;
 import marsrover.app.Rover;
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.internal.matchers.StringContains.containsString;
 public class MarsroverTest {
 
     private String inputFile = System.getProperty("user.dir")+"/../../data/input1.txt";
