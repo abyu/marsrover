@@ -11,11 +11,12 @@ public class Marsrover {
     private String inputFile;
     private BufferedReader bufferedReader;
     private ArrayList<Rover> rovers;
-
+    private CoordinatePosition upperBound;
     public Marsrover(String inputFile) {
         this.inputFile = inputFile;
         try {
             bufferedReader = new BufferedReader(new FileReader(inputFile));
+            upperBound = getUpperCoordinates();
             parseRovers();
         } catch (FileNotFoundException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -65,7 +66,9 @@ public class Marsrover {
             String nextLine = readFileLine();
             if (nextLine != null) {
                 try {
-                    rovers.add(new Rover(fileLine, nextLine));
+                    Rover rover = new Rover(fileLine, nextLine);
+                    rover.setBounds(0,0,upperBound.getX(),upperBound.getY());
+                    rovers.add(rover);
                 } catch (InvalidArgumentException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
