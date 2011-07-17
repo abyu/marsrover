@@ -42,22 +42,7 @@ public class FileParser {
         return rovers;
     }
 
-    public void completeNavigation() throws InvalidArgumentException {
-
-        for (Rover rover : rovers)
-            rover.navigateToFinal();
-    }
-
-    public String getOutput() throws InvalidArgumentException {
-        completeNavigation();
-        String output = "";
-        for(Rover rover: rovers){
-            output += rover.getCurrentPosition().getX()+" "+rover.getCurrentPosition().getY()+" "+rover.getCurrentDirection()+"\n";
-        }
-        return output;
-    }
-
-    private void parseRovers() {
+    public ArrayList<Rover> parseRovers() {
         rovers = new ArrayList<Rover>();
         resetFile();
         readFileLine(); // Ignore First Line
@@ -70,13 +55,14 @@ public class FileParser {
                     Rover rover = new Rover(fileLine, nextLine ,plateau);
                     rovers.add(rover);
                 } catch (InvalidArgumentException e) {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                    e.printStackTrace();
                 }
                 fileLine = readFileLine();
             } else {
                 break;
             }
         }
+        return rovers;
     }
 
     private String readFileLine() {
@@ -97,17 +83,4 @@ public class FileParser {
         }
     }
 
-    public static void main(String[] arg){
-        if(arg.length < 0){
-            System.out.println("Usage: FileParser <input file> ");
-            return;
-        }
-
-        try {
-            FileParser fileParser = new FileParser(arg[0]);
-            System.out.println(fileParser.getOutput());
-        } catch (InvalidArgumentException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
 }

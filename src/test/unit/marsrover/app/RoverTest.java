@@ -1,4 +1,4 @@
-package test.unit.marsrover.app;
+package marsrover.app;
 
 import marsrover.app.InvalidArgumentException;
 import marsrover.app.Plateau;

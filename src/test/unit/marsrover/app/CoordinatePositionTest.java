@@ -1,4 +1,4 @@
-package test.unit.marsrover.app;
+package marsrover.app;
 
 import marsrover.app.CoordinatePosition;
 import org.junit.Ignore;

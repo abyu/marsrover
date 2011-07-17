@@ -52,4 +52,7 @@ public class CoordinatePosition {
         return x;
     }
 
+    public String toString(){
+        return x +","+ y;
+    }
 }

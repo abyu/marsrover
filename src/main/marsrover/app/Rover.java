@@ -9,7 +9,6 @@ public class Rover {
 
     public Rover(int positionX, int positionY) {
         currentPosition = new CoordinatePosition(positionX, positionY);
-
     }
 
     public Rover(String positionString, String commandString) throws InvalidArgumentException {

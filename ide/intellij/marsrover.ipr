@@ -202,9 +202,14 @@
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="libraryTable">
     <library name="cuke">
-      <CLASSES />
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/../../lib" />
+      </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/../../lib/com.springsource.org.objenesis-1.0.0.jar!/" />
+      </SOURCES>
+      <jarDirectory url="file://$PROJECT_DIR$/../../lib" recursive="false" />
     </library>
     <library name="Cuke">
       <CLASSES>
@@ -214,6 +219,13 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/../../lib/cuke4duke-0.4.4.jar!/" />
       </SOURCES>
+    </library>
+    <library name="mock">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/../../lib/com.springsource.org.objenesis-1.0.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
     </library>
     <library name="mockito">
       <CLASSES>
