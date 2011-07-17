@@ -1,7 +1,9 @@
 package test.unit.marsrover.app;
 
 import marsrover.app.InvalidArgumentException;
+import marsrover.app.Plateau;
 import marsrover.app.Rover;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -31,15 +33,9 @@ public class RoverTest {
         assertThat(rover.getCurrentDirection(), is("N"));
     }
 
-    @Test
-    public void throwsAnInvalidArgumentExceptionWhenRoverCreatedWithInvalidPositionString() {
-        try {
-            Rover rover = new Rover("Invalid");
-            throw new AssertionError("Expected an InvalidArgumentException but found none");
-        } catch (InvalidArgumentException e) {
-            //Its fine
-        }
-
+    @Test(expected = InvalidArgumentException.class)
+    public void throwsAnInvalidArgumentExceptionWhenRoverCreatedWithInvalidPositionString() throws InvalidArgumentException {
+        Rover rover = new Rover("invalid");
     }
 
     @Test
@@ -190,27 +186,22 @@ public class RoverTest {
 
     }
 
-    @Test
-    public void throwsAnInvalidArgumentExceptionWhenCommandStringIsNotValidAndRoverStops() {
-        Rover rover = new Rover(2, 4);
-        try {
-            rover = new Rover("2 4 E", "ABC");
-            rover.navigateToFinal();
-            throw new AssertionError("Expected an InvalidArgumentException due to invalid commandString");
-        } catch (InvalidArgumentException e) {
-            assertThat(rover.getCurrentPosition().getX(), is(2));
-            assertThat(rover.getCurrentPosition().getY(), is(4));
-            assertThat(rover.getCurrentDirection(), is("E"));
-            assertThat(e.toString(), containsString("Exception Occurred: The Instruction was Invalid"));
-        }
+    @Test(expected = InvalidArgumentException.class)
+    public void throwsAnInvalidArgumentExceptionWhenCommandStringIsNotValidAndRoverStops() throws InvalidArgumentException {
+        Rover rover = new Rover("2 4 E", "ABC");
+        rover.navigateToFinal();
+        assertThat(rover.getCurrentPosition().getX(), is(2));
+        assertThat(rover.getCurrentPosition().getY(), is(4));
+        assertThat(rover.getCurrentDirection(), is("E"));
     }
 
     @Test
-    public void stopsRoverWhenInstructionMakesTheRoverCrossTheBoundary() throws InvalidArgumentException {
-        Rover rover = new Rover("5 5 N","MM");
-        rover.setBounds(0,0,5,5);
+    public void shouldStopWhenTheNextMoveIsAnInvalidMove() throws InvalidArgumentException {
+        Plateau plateau = new Plateau(0,0,5,5);
+        Rover rover = new Rover("5 5 N", "MM", plateau);
+        rover.step();
         assertThat(rover.getCurrentPosition().getX(), is(5));
-        assertThat(rover.getCurrentPosition().getY(), is(5));
+        assertThat(rover.getCurrentPosition().getY(),is(5));
         assertThat(rover.getCurrentDirection(), is("N"));
     }
 }

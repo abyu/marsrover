@@ -5,18 +5,17 @@ public class Rover {
     private String commandString;
     private String currentDirection;
     private int executed;
-    private int minX;
-    private int maxX;
-    private int minY;
-    private int maxY;
-    private boolean boundSet;
+    private Plateau plateau;
+
     public Rover(int positionX, int positionY) {
         currentPosition = new CoordinatePosition(positionX, positionY);
+
     }
 
     public Rover(String positionString, String commandString) throws InvalidArgumentException {
         this(positionString);
         this.commandString = commandString;
+        plateau = new Plateau(0, 0, Integer.MAX_VALUE, Integer.MAX_VALUE);
     }
 
     public Rover(String positionString) throws InvalidArgumentException {
@@ -27,6 +26,11 @@ public class Rover {
         } catch (Exception e) {
             throw new InvalidArgumentException("Invalid Argument for positionString");
         }
+    }
+
+    public Rover(String positionString, String commandString, Plateau plateau) throws InvalidArgumentException {
+        this(positionString, commandString);
+        this.plateau = plateau;
     }
 
     public CoordinatePosition getCurrentPosition() {
@@ -47,24 +51,21 @@ public class Rover {
     }
 
     public void moveForward() {
-        if(boundSet)
-            setBoundsForCurrentPosition();
+        CoordinatePosition newPosition = new CoordinatePosition(-1 ,-1);
         if(currentDirection.equals("N")){
-            currentPosition = currentPosition.goForward();
+            newPosition = currentPosition.goForward();
         }
         if(currentDirection.equals("S")){
-            currentPosition = currentPosition.goBackward();
+            newPosition = currentPosition.goBackward();
         }
         if(currentDirection.equals("W")){
-            currentPosition = currentPosition.goLeft();
+            newPosition = currentPosition.goLeft();
         }
         if(currentDirection.equals("E")){
-            currentPosition = currentPosition.goRight();
+            newPosition = currentPosition.goRight();
         }
-    }
-
-    private void setBoundsForCurrentPosition() {
-        currentPosition.setBounds(minX, minY, maxX, maxY );
+        if(plateau.isValid(newPosition))
+            currentPosition = newPosition;
     }
 
     public void turnLeft() {
@@ -117,15 +118,4 @@ public class Rover {
         }
         executed++;
     }
-
-    public void setBounds(int minX, int minY, int maxX, int maxY) {
-
-        this.minX = minX;
-        this.minY = minY;
-        this.maxX = maxX;
-        this.maxY = maxY;
-        boundSet = true;
-    }
-
-
 }

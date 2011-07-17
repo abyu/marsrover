@@ -1,6 +1,7 @@
 package test.unit.marsrover.app;
 
 import marsrover.app.CoordinatePosition;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -105,6 +106,5 @@ public class CoordinatePositionTest {
         CoordinatePosition coordinatePosition1 = new CoordinatePosition(1, 2);
         CoordinatePosition samePosition = new CoordinatePosition(1 ,2);
         assertTrue(coordinatePosition1.equals(samePosition));
-
     }
 }

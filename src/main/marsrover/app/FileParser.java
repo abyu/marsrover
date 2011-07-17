@@ -66,8 +66,8 @@ public class FileParser {
             String nextLine = readFileLine();
             if (nextLine != null) {
                 try {
-                    Rover rover = new Rover(fileLine, nextLine);
-                    rover.setBounds(0,0,upperBound.getX(),upperBound.getY());
+                    Plateau plateau = new Plateau(0, 0, upperBound.getX(), upperBound.getY());
+                    Rover rover = new Rover(fileLine, nextLine ,plateau);
                     rovers.add(rover);
                 } catch (InvalidArgumentException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.

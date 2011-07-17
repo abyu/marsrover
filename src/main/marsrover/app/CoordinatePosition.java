@@ -59,6 +59,7 @@ public class CoordinatePosition {
             return this;
     }
 
+    @Deprecated
     public void setBounds(int minX, int minY, int maxX, int maxY) {
         this.minX = minX;
         this.minY = minY;
