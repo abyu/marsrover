@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 public class CoordinatePositionTest {
 
@@ -97,5 +98,13 @@ public class CoordinatePositionTest {
         CoordinatePosition same = zeroOne.goRight();
         assertThat(same.getX(), is(5));
         assertThat(same.getY(), is(1));
+    }
+
+    @Test
+    public void twoCoordinatePositionsAreEqualIfTheXandYAreEqual(){
+        CoordinatePosition coordinatePosition1 = new CoordinatePosition(1, 2);
+        CoordinatePosition samePosition = new CoordinatePosition(1 ,2);
+        assertTrue(coordinatePosition1.equals(samePosition));
+
     }
 }

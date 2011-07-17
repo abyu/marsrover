@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class Marsrover {
+public class FileParser {
     private String inputFile;
     private BufferedReader bufferedReader;
     private ArrayList<Rover> rovers;
     private CoordinatePosition upperBound;
-    public Marsrover(String inputFile) {
+    public FileParser(String inputFile) {
         this.inputFile = inputFile;
         try {
             bufferedReader = new BufferedReader(new FileReader(inputFile));
@@ -99,13 +99,13 @@ public class Marsrover {
 
     public static void main(String[] arg){
         if(arg.length < 0){
-            System.out.println("Usage: Marsrover <input file> ");
+            System.out.println("Usage: FileParser <input file> ");
             return;
         }
 
         try {
-            Marsrover marsrover = new Marsrover(arg[0]);
-            System.out.println(marsrover.getOutput());
+            FileParser fileParser = new FileParser(arg[0]);
+            System.out.println(fileParser.getOutput());
         } catch (InvalidArgumentException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }

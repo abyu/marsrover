@@ -70,4 +70,15 @@ public class CoordinatePosition {
     private boolean isValidMove(int nextX, int nextY) {
         return (nextX >= minX && nextX <= maxX) && (nextY >= minY && nextY <= maxY);
     }
+
+    public boolean equals(Object aPosition){
+        CoordinatePosition coordinatePosition = (CoordinatePosition) aPosition;
+        return coordinatePosition.getX() == x && coordinatePosition.getY() == y;
+    }
+
+    public int hashCode(){
+
+        return x;
+    }
+            
 }

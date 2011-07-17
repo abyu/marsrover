@@ -1,23 +1,21 @@
 package marsrover.cucumber.steps;
 
 import cuke4duke.annotation.I18n.EN.*;
-import marsrover.app.Marsrover;
+import marsrover.app.FileParser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.matchers.JUnitMatchers.containsString;
 
 public class BasicSteps {
-    private Marsrover marsrover;
+    private FileParser fileParser;
 
     @Given("^I start my application with \"([^\"]*)\" as my input file$")
     public void startApplication(String inputFile) {
         String file = System.getProperty("user.dir")+"/data/"+inputFile+".txt";
-        marsrover = new Marsrover(file);
+        fileParser = new FileParser(file);
     }
 
     @Then("^I receive the output as in \"([^\"]*)\" file$")
@@ -31,6 +29,6 @@ public class BasicSteps {
             allData += fileLine +"\n";
             fileLine = readFile.readLine();
         }
-        assertThat(marsrover.getOutput(), is(allData));
+        assertThat(fileParser.getOutput(), is(allData));
     }
 }
