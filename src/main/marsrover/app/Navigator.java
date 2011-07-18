@@ -23,7 +23,7 @@ public class Navigator {
         navigateRoversToFinalPosition();
         String output = "";
         for(Rover rover: rovers){
-            output += rover.getCurrentPosition().getX()+" "+rover.getCurrentPosition().getY()+" "+rover.getCurrentDirection()+"\n";
+            output += rover.getCurrentPosition().getX()+" "+rover.getCurrentPosition().getY()+" "+rover.getCurrentDirectionString()+"\n";
         }
         return output;
     }

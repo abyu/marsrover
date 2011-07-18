@@ -32,9 +32,9 @@ public class NavigatorTest {
         rovers = navigator.getRovers();
         navigator.navigateRoversToFinalPosition();
         assertThat(rovers.get(0).getCurrentPosition(), is(new CoordinatePosition(1, 3)));
-        assertThat(rovers.get(0).getCurrentDirection(), is("N"));
+        assertThat(rovers.get(0).getCurrentDirectionString(), is("N"));
         assertThat(rovers.get(1).getCurrentPosition(), is(new CoordinatePosition(5,1)));
-        assertThat(rovers.get(1).getCurrentDirection(), is("E"));
+        assertThat(rovers.get(1).getCurrentDirectionString(), is("E"));
     }
 
     @Test

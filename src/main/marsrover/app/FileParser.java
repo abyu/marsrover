@@ -11,19 +11,21 @@ public class FileParser {
     private String inputFile;
     private BufferedReader bufferedReader;
     private ArrayList<Rover> rovers;
+    private Plateau plateau;
     private CoordinatePosition upperBound;
     public FileParser(String inputFile) {
         this.inputFile = inputFile;
         try {
             bufferedReader = new BufferedReader(new FileReader(inputFile));
             upperBound = getUpperCoordinates();
+            plateau = new Plateau(0, 0, upperBound.getX(), upperBound.getY());
             parseRovers();
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
     }
 
-    public CoordinatePosition getUpperCoordinates() {
+    protected CoordinatePosition getUpperCoordinates() {
         int tempX = 0;
         int tempY = 0;
         try {
@@ -37,12 +39,15 @@ public class FileParser {
         return new CoordinatePosition(tempX, tempY);
     }
 
+    public Plateau getPlateau(){
+        return plateau;
+    }
 
     public ArrayList<Rover> getRovers() {
         return rovers;
     }
 
-    public ArrayList<Rover> parseRovers() {
+    public ArrayList<Rover> parseRovers() throws InvalidArgumentException {
         rovers = new ArrayList<Rover>();
         resetFile();
         readFileLine(); // Ignore First Line
@@ -50,13 +55,7 @@ public class FileParser {
         while (fileLine != null) {
             String nextLine = readFileLine();
             if (nextLine != null) {
-                try {
-                    Plateau plateau = new Plateau(0, 0, upperBound.getX(), upperBound.getY());
-                    Rover rover = new Rover(fileLine, nextLine ,plateau);
-                    rovers.add(rover);
-                } catch (InvalidArgumentException e) {
-                    e.printStackTrace();
-                }
+                rovers.add(createRover(fileLine, nextLine));
                 fileLine = readFileLine();
             } else {
                 break;
@@ -65,11 +64,16 @@ public class FileParser {
         return rovers;
     }
 
+    private Rover createRover(String fileLine, String nextLine) throws InvalidArgumentException {
+        Rover rover = new Rover(fileLine, nextLine ,plateau);
+        return rover;
+    }
+
     private String readFileLine() {
         try {
             return bufferedReader.readLine();
         } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
             return "";
         }
     }
@@ -82,5 +86,4 @@ public class FileParser {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
     }
-
 }

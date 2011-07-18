@@ -3,9 +3,9 @@ package marsrover.app;
 public class Rover {
     private CoordinatePosition currentPosition;
     private String commandString;
-    private String currentDirection;
     private int executed;
     private Plateau plateau;
+    private Direction currentDirection;
 
     public Rover(int positionX, int positionY) {
         currentPosition = new CoordinatePosition(positionX, positionY);
@@ -21,8 +21,11 @@ public class Rover {
         String[] separated = positionString.split(" ");
         try {
             currentPosition = new CoordinatePosition(Integer.parseInt(separated[0]), Integer.parseInt(separated[1]));
-            currentDirection = separated[2];
-        } catch (Exception e) {
+            currentDirection = DirectionFactory.getDirectionInstance(separated[2]);
+        }catch (InvalidArgumentException e){
+            throw e;
+        }
+        catch (NumberFormatException e) {
             throw new InvalidArgumentException("Invalid Argument for positionString");
         }
     }
@@ -40,8 +43,8 @@ public class Rover {
         return commandString;
     }
 
-    public String getCurrentDirection() {
-        return currentDirection;
+    public String getCurrentDirectionString() {
+        return currentDirection.toString();
     }
 
     public void navigateToFinal() throws InvalidArgumentException {
@@ -50,58 +53,18 @@ public class Rover {
     }
 
     public void moveForward() {
-        CoordinatePosition newPosition = new CoordinatePosition(-1 ,-1);
-        if(currentDirection.equals("N")){
-            newPosition = currentPosition.goForward();
-        }
-        if(currentDirection.equals("S")){
-            newPosition = currentPosition.goBackward();
-        }
-        if(currentDirection.equals("W")){
-            newPosition = currentPosition.goLeft();
-        }
-        if(currentDirection.equals("E")){
-            newPosition = currentPosition.goRight();
-        }
+        CoordinatePosition newPosition;
+        newPosition = currentDirection.findForward(currentPosition);
         if(plateau.isValid(newPosition))
             currentPosition = newPosition;
     }
 
     public void turnLeft() {
-        if(currentDirection.equals("N")){
-            currentDirection = "W";
-            return;
-        }
-        if(currentDirection.equals("S")){
-            currentDirection = "E";
-            return;
-        }
-        if(currentDirection.equals("W")){
-            currentDirection = "S";
-            return;
-        }
-        if(currentDirection.equals("E")){
-            currentDirection = "N";
-        }
+        currentDirection = currentDirection.findLeft();
     }
 
     public void turnRight() {
-        if(currentDirection.equals("N")){
-            currentDirection = "E";
-            return;
-        }
-        if(currentDirection.equals("S")){
-            currentDirection = "W";
-            return;
-        }
-        if(currentDirection.equals("W")){
-            currentDirection = "N";
-            return;
-        }
-        if(currentDirection.equals("E")){
-            currentDirection = "S";
-            return;
-        }
+        currentDirection = currentDirection.findRight();
     }
 
     public void step() throws InvalidArgumentException {

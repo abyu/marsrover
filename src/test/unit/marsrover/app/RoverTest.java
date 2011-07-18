@@ -1,14 +1,9 @@
 package marsrover.app;
 
-import marsrover.app.InvalidArgumentException;
-import marsrover.app.Plateau;
-import marsrover.app.Rover;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.matchers.JUnitMatchers.containsString;
 
 public class RoverTest {
     @Test
@@ -30,7 +25,7 @@ public class RoverTest {
         Rover rover = new Rover("1 3 N");
         assertThat(rover.getCurrentPosition().getX(), is(1));
         assertThat(rover.getCurrentPosition().getY(), is(3));
-        assertThat(rover.getCurrentDirection(), is("N"));
+        assertThat(rover.getCurrentDirectionString(), is("N"));
     }
 
     @Test(expected = InvalidArgumentException.class)
@@ -43,7 +38,7 @@ public class RoverTest {
         Rover rover = new Rover("2 3 N", "MLMLMLMM");
         assertThat(rover.getCurrentPosition().getX(), is(2));
         assertThat(rover.getCurrentPosition().getY(), is(3));
-        assertThat(rover.getCurrentDirection(), is("N"));
+        assertThat(rover.getCurrentDirectionString(), is("N"));
         assertThat(rover.getCommandString(), is("MLMLMLMM"));
     }
 
@@ -79,56 +74,56 @@ public class RoverTest {
     public void directionOfRoverFrom_N_WhenTurnLeftIs_W() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 N", "L");
         rover.turnLeft();
-        assertThat(rover.getCurrentDirection(), is("W"));
+        assertThat(rover.getCurrentDirectionString(), is("W"));
     }
 
     @Test
     public void directionOfRoverFrom_S_WhenTurnLeftIs_E() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 S", "L");
         rover.turnLeft();
-        assertThat(rover.getCurrentDirection(), is("E"));
+        assertThat(rover.getCurrentDirectionString(), is("E"));
     }
 
     @Test
     public void directionOfRoverFrom_W_WhenTurnLeftIs_S() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 W", "L");
         rover.turnLeft();
-        assertThat(rover.getCurrentDirection(), is("S"));
+        assertThat(rover.getCurrentDirectionString(), is("S"));
     }
 
     @Test
     public void directionOfRoverFrom_E_WhenTurnLeftIs_N() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 E", "L");
         rover.turnLeft();
-        assertThat(rover.getCurrentDirection(), is("N"));
+        assertThat(rover.getCurrentDirectionString(), is("N"));
     }
 
     @Test
     public void directionOfRoverFrom_N_WhenTurnRightIs_E() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 N", "R");
         rover.turnRight();
-        assertThat(rover.getCurrentDirection(), is("E"));
+        assertThat(rover.getCurrentDirectionString(), is("E"));
     }
 
     @Test
     public void directionOfRoverFrom_S_WhenTurnRightIs_W() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 S", "R");
         rover.turnRight();
-        assertThat(rover.getCurrentDirection(), is("W"));
+        assertThat(rover.getCurrentDirectionString(), is("W"));
     }
 
     @Test
     public void directionOfRoverFrom_W_WhenTurnRightIs_N() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 W", "R");
         rover.turnRight();
-        assertThat(rover.getCurrentDirection(), is("N"));
+        assertThat(rover.getCurrentDirectionString(), is("N"));
     }
 
     @Test
     public void directionOfRoverFrom_E_WhenTurnRightIs_S() throws InvalidArgumentException {
         Rover rover = new Rover("1 1 E", "R");
         rover.turnRight();
-        assertThat(rover.getCurrentDirection(), is("S"));
+        assertThat(rover.getCurrentDirectionString(), is("S"));
     }
 
     @Test
@@ -137,7 +132,7 @@ public class RoverTest {
         rover.step();
         assertThat(rover.getCurrentPosition().getX(), is(1));
         assertThat(rover.getCurrentPosition().getY(), is(3));
-        assertThat(rover.getCurrentDirection(), is("N"));
+        assertThat(rover.getCurrentDirectionString(), is("N"));
     }
 
     @Test
@@ -146,7 +141,7 @@ public class RoverTest {
         rover.step();
         assertThat(rover.getCurrentPosition().getX(), is(1));
         assertThat(rover.getCurrentPosition().getY(), is(2));
-        assertThat(rover.getCurrentDirection(), is("W"));
+        assertThat(rover.getCurrentDirectionString(), is("W"));
     }
 
     @Test
@@ -155,7 +150,7 @@ public class RoverTest {
         rover.step();
         assertThat(rover.getCurrentPosition().getX(), is(1));
         assertThat(rover.getCurrentPosition().getY(), is(2));
-        assertThat(rover.getCurrentDirection(), is("E"));
+        assertThat(rover.getCurrentDirectionString(), is("E"));
     }
 
     @Test
@@ -164,7 +159,7 @@ public class RoverTest {
         rover.navigateToFinal();
         assertThat(rover.getCurrentPosition().getX(), is(1));
         assertThat(rover.getCurrentPosition().getY(), is(2));
-        assertThat(rover.getCurrentDirection(), is("W"));
+        assertThat(rover.getCurrentDirectionString(), is("W"));
     }
 
     @Test
@@ -173,7 +168,7 @@ public class RoverTest {
         rover.navigateToFinal();
         assertThat(rover.getCurrentPosition().getX(), is(1));
         assertThat(rover.getCurrentPosition().getY(), is(3));
-        assertThat(rover.getCurrentDirection(), is("N"));
+        assertThat(rover.getCurrentDirectionString(), is("N"));
     }
 
     @Test
@@ -182,7 +177,7 @@ public class RoverTest {
         rover.navigateToFinal();
         assertThat(rover.getCurrentPosition().getX(), is(5));
         assertThat(rover.getCurrentPosition().getY(), is(1));
-        assertThat(rover.getCurrentDirection(), is("E"));
+        assertThat(rover.getCurrentDirectionString(), is("E"));
 
     }
 
@@ -192,7 +187,7 @@ public class RoverTest {
         rover.navigateToFinal();
         assertThat(rover.getCurrentPosition().getX(), is(2));
         assertThat(rover.getCurrentPosition().getY(), is(4));
-        assertThat(rover.getCurrentDirection(), is("E"));
+        assertThat(rover.getCurrentDirectionString(), is("E"));
     }
 
     @Test
@@ -202,6 +197,6 @@ public class RoverTest {
         rover.step();
         assertThat(rover.getCurrentPosition().getX(), is(5));
         assertThat(rover.getCurrentPosition().getY(),is(5));
-        assertThat(rover.getCurrentDirection(), is("N"));
+        assertThat(rover.getCurrentDirectionString(), is("N"));
     }
 }
